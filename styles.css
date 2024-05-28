@@ -1,0 +1,36 @@
+/* styles.css */
+
+/* Tema claro por defecto */
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+section#home {
+    background-color: #f8f9fa;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+section#home.dark-mode {
+    background-color: #1c1c1c;
+}
+
+.navbar.dark-mode {
+    background-color: #333;
+}
+
+.card.dark-mode {
+    background-color: #444;
+    color: #ffffff;
+}
+
+.progress-bar.dark-mode {
+    background-color: #777;
+}

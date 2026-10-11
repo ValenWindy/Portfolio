@@ -16,13 +16,12 @@ export default function LanguageSelector() {
     changeLanguage(code)
   }
 
-  // En celular (< sm): franja fija arriba, de borde a borde, con un degradé
-  // del color del fondo para que el contenido que se desplaza por debajo se
-  // tape y no se superponga con los botones.
-  // Desde sm: selector vertical fijo a la izquierda, centrado en alto, sin fondo.
+  // En celular (< sm): queda arriba de todo, en posición absoluta, así que
+  // se va con el contenido cuando se scrollea hacia abajo.
+  // Desde sm: selector vertical fijo a la izquierda, centrado en alto.
   return (
     <div
-      className="pointer-events-none fixed inset-x-0 top-0 z-40 flex h-16 flex-row items-center gap-5 bg-gradient-to-b from-reel-black to-transparent px-4 sm:inset-x-auto sm:left-6 sm:top-1/2 sm:h-auto sm:-translate-y-1/2 sm:flex-col sm:items-start sm:bg-none sm:px-0"
+      className="pointer-events-none absolute inset-x-0 top-0 z-40 flex h-16 flex-row items-center gap-5 px-4 sm:fixed sm:inset-x-auto sm:left-6 sm:top-1/2 sm:h-auto sm:-translate-y-1/2 sm:flex-col sm:items-start sm:px-0"
       role="radiogroup"
       aria-label="Idioma / Language"
     >

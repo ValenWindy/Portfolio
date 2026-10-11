@@ -11,6 +11,8 @@ export default function SectionShell({ sectionKey, title, onBack, children }) {
     onBack()
   }
 
+  // Espaciado vertical: en celular pt-20 / pb-12 (mismo ritmo que DVDMenu);
+  // desde sm vuelve a py-24 como antes.
   return (
     <motion.div
       key={sectionKey}
@@ -18,7 +20,7 @@ export default function SectionShell({ sectionKey, title, onBack, children }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex min-h-screen w-full flex-col items-center px-6 py-24 sm:px-12"
+      className="flex min-h-screen w-full flex-col items-center px-6 pb-12 pt-20 sm:px-12 sm:py-24"
     >
       <div className="w-full max-w-2xl">
         <h2 className="text-center font-display text-3xl text-reel-brassBright sm:text-4xl">
@@ -26,9 +28,9 @@ export default function SectionShell({ sectionKey, title, onBack, children }) {
         </h2>
         <div className="mx-auto mt-5 h-px w-16 bg-reel-brass/50" />
 
-        <div className="mt-10">{children}</div>
+        <div className="mt-8 sm:mt-10">{children}</div>
 
-        <div className="mt-14 flex justify-center">
+        <div className="mt-10 flex justify-center sm:mt-14">
           <button
             onClick={handleBack}
             className="group flex items-center gap-2 font-label text-xs tracking-[0.3em] text-reel-brass/70 transition-colors duration-300 hover:text-reel-brassBright"

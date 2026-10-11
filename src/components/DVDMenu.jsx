@@ -14,6 +14,9 @@ export default function DVDMenu({ onSelect }) {
     onSelect(key)
   }
 
+  // Espaciado vertical: en celular pt-20 deja lugar a la franja fija del
+  // selector de idioma y pb-12 cierra la pantalla sin dejar un hueco enorme
+  // (igual que SectionShell). Desde sm vuelve a py-24 como antes.
   return (
     <motion.div
       key="menu"
@@ -21,9 +24,9 @@ export default function DVDMenu({ onSelect }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex min-h-screen w-full flex-col items-center justify-center px-6 py-24"
+      className="flex min-h-screen w-full flex-col items-center justify-center px-6 pb-12 pt-20 sm:py-24"
     >
-      <div className="mb-16 text-center sm:mb-20">
+      <div className="mb-8 text-center sm:mb-20">
         <h1 className="font-display text-3xl tracking-wide text-reel-bone sm:text-5xl">
           {t.menu.title}
         </h1>
@@ -32,7 +35,7 @@ export default function DVDMenu({ onSelect }) {
         </p>
       </div>
 
-      <div className="dvd-stair my-10 ">
+      <div className="dvd-stair my-4 sm:my-10">
         {SECTION_ORDER.map((key, i) => (
           <div key={key}>
             <MenuOrb

@@ -4,6 +4,10 @@ import { useSound } from '../context/SoundContext'
 export default function MenuOrb({ number, label, onClick, delay = 0 }) {
   const { play } = useSound()
 
+  // Las etiquetas largas (ej. "SlayerScript") usan una tipografía un poco más
+  // chica para que entren dentro del anillo interno del círculo.
+  const isLong = label.length > 10
+
   return (
     <motion.button
       onClick={onClick}
@@ -26,7 +30,11 @@ export default function MenuOrb({ number, label, onClick, delay = 0 }) {
       <span className="font-label text-[11px] tracking-[0.3em] text-reel-brass/70 transition-colors duration-500 group-hover:text-reel-brassBright">
         {number}
       </span>
-      <span className="mt-1 px-3 text-center font-display text-lg leading-tight text-reel-bone transition-colors duration-500 group-hover:text-reel-brassBright sm:text-xl">
+      <span
+        className={`mt-1 whitespace-nowrap px-2 text-center font-display leading-tight text-reel-bone transition-colors duration-500 group-hover:text-reel-brassBright ${
+          isLong ? 'text-sm sm:text-lg' : 'text-lg sm:text-xl'
+        }`}
+      >
         {label}
       </span>
     </motion.button>
